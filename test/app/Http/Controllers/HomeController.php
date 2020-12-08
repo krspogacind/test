@@ -14,7 +14,8 @@ class HomeController extends Controller
     public function index()
     {
         $first_name = 'Darko';
-        return view('home', ['first_name' => $first_name]);
+        $some_aray = array('blue', 'red', 'green');
+        return view('child', ['first_name' => $first_name, 'some_array' => $some_aray]);
     }
 
     /**
