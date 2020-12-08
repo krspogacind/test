@@ -16,3 +16,24 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::get('/world', function () {
+    return 'Hello world';
+})->name('get_world');
+
+Route::post('/hello', function () {
+    return 'Hello world';
+})->name('post_world');
+
+Route::put('/world', function () {
+    return 'Hello world';
+})->name('put_world');
+
+Route::patch('/world', function () {
+    return 'Hello world';
+})->name('patch_world');
+
+Route::delete('/world', function () {
+    return 'Hello world';
+})->name('delete_world');
