@@ -17,14 +17,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/home', 'HomeController@get')->name('get_world');
-
-Route::post('/home', 'HomeController@post')->name('post_world');
-
-Route::put('/home', 'HomeController@put')->name('put_world');
-
-Route::patch('/home', 'HomeController@patch')->name('patch_world');
-
-Route::delete('/home', 'HomeController@delete')->name('delete_world');
+Route::resource('home', 'HomeController');
 
 Route::resource('photos', 'PhotoController');
