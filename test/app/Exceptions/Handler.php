@@ -3,6 +3,7 @@
 namespace App\Exceptions;
 
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use ParseError;
 use Throwable;
 
 class Handler extends ExceptionHandler
@@ -13,7 +14,7 @@ class Handler extends ExceptionHandler
      * @var array
      */
     protected $dontReport = [
-        //
+        ParseError::class,
     ];
 
     /**
@@ -37,4 +38,14 @@ class Handler extends ExceptionHandler
             //
         });
     }
+
+    /*public function render($request, Throwable $exception)
+    {
+        
+        if ($exception instanceof CustomException) {
+            return response()->json(['foo' => 'bar']);
+        }
+
+        return parent::render($request, $exception);
+    }*/
 }
