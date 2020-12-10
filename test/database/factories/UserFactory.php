@@ -31,7 +31,7 @@ class UserFactory extends Factory
             'first_name' => $this->faker->firstName,
             'last_Name' => $this->faker->lastName,
             'company' => $this->faker->company,
-            'country' => $this->faker->country,
+            'country' => $this->faker->buildingNumber,
         ];
     }
 }

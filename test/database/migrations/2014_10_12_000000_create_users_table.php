@@ -21,9 +21,11 @@ class CreateUsersTable extends Migration
             $table->string('first_name');
             $table->string('last_name');
             $table->string('company')->nullable();
-            $table->string('country')->nullable();
+            $table->unsignedInteger('country');
             $table->rememberToken();
             $table->timestamps();
+
+            $table->foreign('country')->references('id')->on('countries');
         });
     }
 
