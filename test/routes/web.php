@@ -17,9 +17,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('home', 'HomeController');
-
-Route::resource('photos', 'PhotoController');
+Route::resources([
+    'home' => 'HomeController',
+    'photos' => 'PhotoController',
+    'post' => 'PostController',
+]);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
