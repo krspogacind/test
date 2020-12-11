@@ -25,4 +25,7 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
+Route::get('/open', 'DataController@open');
+Route::get('/closed', 'DataController@closed')->middleware('auth:api');
+
 require __DIR__.'/auth.php';
