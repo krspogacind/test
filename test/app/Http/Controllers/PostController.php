@@ -18,7 +18,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        //
+        return response('index method', 200);
     }
 
     /**
@@ -28,7 +28,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
+        return response('create method', 200);
     }
 
     /**
@@ -39,7 +39,11 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        if ($request->user()->can('create', Post::class)) {
+            return response('store method', 200);
+        }
+
+        return response('Unauthorize', 403);
     }
 
     /**
@@ -50,7 +54,7 @@ class PostController extends Controller
      */
     public function show(Post $post)
     {
-        //
+        return response('show method', 200);
     }
 
     /**
@@ -61,7 +65,7 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
-        //
+        return response('edit method', 200);
     }
 
     /**
@@ -73,7 +77,11 @@ class PostController extends Controller
      */
     public function update(Request $request, Post $post)
     {
-        //
+        if ($request->user()->can('update', Post::class)) {
+            return response('store method', 200);
+        }
+
+        return response('Unauthorize', 403);
     }
 
     /**
@@ -84,6 +92,6 @@ class PostController extends Controller
      */
     public function destroy(Post $post)
     {
-        //
+        return response('destroy method', 200);
     }
 }
